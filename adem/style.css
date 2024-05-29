@@ -1,0 +1,210 @@
+body {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   min-height: 100vh;
+   background-color: #0b101a !important;
+   font-family: Arial, Helvetica, sans-serif;
+}
+
+.profil-paneli {
+   width: 700px; 
+   height: 500px; 
+   background-color: #111827; 
+   border-radius: 5px; 
+   overflow: hidden; 
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+   perspective: 1000px;
+   position: relative; 
+}
+
+.banner {
+   background-image: url('img/banner.gif'); 
+   background-size: cover; 
+   background-position: center; 
+   height: 100px; 
+}
+
+.avatar {
+   width: 80px; 
+   height: 80px; 
+   border-radius: 10%; 
+   background-image: url('img/kopke.jpg'); 
+   background-size: cover; 
+   margin: -50px auto 20px; 
+   border: 3px solid #111827; 
+   margin-bottom: 10px; 
+}
+
+.isim {
+   text-align: center; 
+   padding: 10px; 
+   color: #ffffff; 
+   animation: slideIn 1.7s ease-out
+}
+
+.isim h2 {
+   margin: 0; 
+   font-size: 1.8rem; 
+   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+   animation: slideIn 1.7s ease-out
+}
+
+.sosyal-medya {
+   display: flex; 
+   justify-content: center; 
+   margin-top: 10px; 
+   animation: slideIn 1.4s ease-out
+}
+
+.sosyal-medya a {
+   display: flex; 
+   align-items: center; 
+   margin: 0 10px; 
+   text-decoration: none; 
+   color: #fff; 
+   animation: slideIn 1.4s ease-out
+}
+
+.sosyal-medya img {
+   width: 24px; 
+   height: 24px; 
+   margin-right: 5px; 
+   animation: slideIn 1.4s ease-out
+}
+
+.on-yuz,
+.arka-yuz {
+   width: 100%; 
+   height: 100%; 
+   backface-visibility: hidden; 
+   transition: transform 0.6s ease-in-out; 
+   position: absolute; 
+   top: 0; 
+   left: 0; 
+}
+
+.on-yuz {
+   transform: rotateY(0deg); 
+   z-index: 2; 
+}
+
+.arka-yuz {
+   transform: rotateY(-180deg); 
+   background-color: #111827; 
+   color: #fff; 
+   display: flex; 
+   flex-direction: column; 
+   align-items: center; 
+   justify-content: center; 
+   padding: 20px; 
+   text-align: center; 
+   position: absolute; 
+   top: 0; 
+   left: 0; 
+   width: 100%; 
+   height: 100%;
+   z-index: 1;
+   box-sizing: border-box;
+}
+
+.arka-yuz h2 {
+   margin: 0 0 20px 0;
+   font-size: 1.8rem; 
+   max-width: 80%; 
+   text-align: center; 
+   word-wrap: break-word; 
+}
+
+.arka-yuz p {
+   font-size: 1rem; 
+   line-height: 1.6; 
+   max-width: 80%; 
+   margin: 0 auto 20px; 
+   word-wrap: break-word; 
+}
+
+.arka-yuz .cevirme-ikonu {
+   position: absolute; 
+   bottom: 10px; 
+   right: 10px; 
+   cursor: pointer; 
+   z-index: 3; 
+}
+
+.profil-paneli.cevrildi .arka-yuz {
+   transform: rotateY(0deg); 
+   z-index: 2; 
+}
+
+.profil-paneli.cevrildi .on-yuz {
+   transform: rotateY(180deg); 
+}
+
+.cevirme-ikonu {
+   position: absolute; 
+   bottom: 10px; 
+   right: 10px; 
+   cursor: pointer; 
+}
+
+#cevir-on {
+   color: #fff;
+}
+
+.ozgecmis {
+   text-align: center;
+   font-style: italic;
+   padding: 10px;
+   color: #ffffff;
+   animation: slideIn 1.7s ease-out 
+}
+
+.ozgecmis h3 {
+   margin: 30px 0 20px 0;
+   font-size: 1.5rem;
+   font-family: Arial, Helvetica, sans-serif;
+   animation: slideIn 1.7s ease-out 
+}
+
+.table > :not(caption) > * > * {
+   background-color: #111827 !important; 
+   color: #fff !important; 
+}
+.table thead th {
+   background-color: #343a40 !important; 
+   color: #fff !important; 
+}
+
+.ozgecmis .ozgecmis-kutu {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+.ozgecmis .baslik-kutu,
+.ozgecmis .icerik-kutu {
+   display: inline-block;
+   border: 1px solid #4a5568;
+   border-radius: 10px;
+   padding: 17px;
+   margin-bottom: 17px;
+   max-width: 100%;
+}
+
+.ozgecmis .baslik-kutu h3,
+.ozgecmis .icerik-kutu p {
+   margin: 0;
+   padding: 0;
+}
+
+@keyframes slideIn {
+   0% {
+       opacity: 0;
+       transform: translateY(30px);
+   }
+   100% {
+       opacity: 1;
+       transform: translateY(0);
+   }
+}
